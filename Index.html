@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!---- <link rel="icon" type="image/x-icon" href="/images/favicon.ico"> -->
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Vaccination Drive</title>
+
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="header">
+				<h3>Create Account</h3>
+			</div>
+			<div id="control">
+				<label for="name">Name:</label>
+				<input
+					type="text"
+					name="Your_Name"
+					id="name"
+					placeholder="Enter Your Name"
+					min="10"
+					max="10"
+					maxlength="15"
+					required
+				/><br />
+			</div>
+			<div id="control">
+				<label for="age"> Age:</label>
+				<input
+					type="number"
+					name="Your_Age"
+					id="age"
+					placeholder="Enter Your Age"
+					required
+					min="18"
+					max="99"
+				/><br />
+			</div>
+			<div id="control1">
+				<label>Gender : </label>
+				<label for="male">Male</label>
+				<input type="radio" name="Your_Choice" id="male" />
+				<label for="female">Female</label>
+				<input type="radio" name="Your_Choice" id="female" />
+			</div>
+			<div id="control">
+				<label for="phone">Mobile Number:</label>
+				<input
+					type="tel"
+					name="Your_PhoneNumber"
+					placeholder="Enter Your MobileNumber"
+					id="phone"
+					minlength="10"
+					maxlength="13"
+					required
+				/><br />
+			</div>
+			<div id="control">
+				<label for="city"> City:</label>
+				<input
+					type="text"
+					name="Your_Age"
+					id="city"
+					placeholder="Enter Your City "
+					required
+				/><br />
+			</div>
+			<div id="control">
+				<label for="email"> Email ID:</label>
+				<input
+					type="text"
+					name="email"
+					id="email"
+					placeholder="Enter Your Email ID "
+					required
+				/><br />
+			</div>
+			<div id="control">
+				<button type="submit" name="Submit" id="submit">Submit</button>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
