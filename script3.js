@@ -20,30 +20,16 @@ let allUsers = [];
     console.log(allUsers);
     
     document.querySelector("#allRegUsers").addEventListener("click", e => {
-        let allRegUsers = "";
-        allUsers.forEach(element => {
-            allRegUsers += element.email + "\n\n";
-        });
-        alert(allRegUsers);
+        location.href = "index4.html?name=allRegUsers";
     })
 
     
     document.querySelector("#allVaccinatedUsers").addEventListener("click", e => {
-        let allVaccinatedUsers = "";
-        allUsers.forEach(element => {
-            if(element.firstVaccinationDate === "today's date") {
-                allVaccinatedUsers += element.email + "\n\n";
-            }
-        });
-        alert(allVaccinatedUsers);
+        location.href = "index4.html?name=allVaccinatedUsers";    
     })
     
     document.querySelector("#nonVaccinatedUsers").addEventListener("click", e => {
-        let nonVaccinatedUsers = "";
-        allUsers.forEach(element => {
-            if(element.firstVaccinationDate === "") {
-                nonVaccinatedUsers += element.email + "\n\n";
-            }
-        });
-        alert(nonVaccinatedUsers);
+        location.href = "index4.html?name=nonVaccinatedUsers";
     })
+
+    
