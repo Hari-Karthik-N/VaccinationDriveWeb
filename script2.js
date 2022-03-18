@@ -2,7 +2,7 @@ let allObjects = [];
 let allUsers = [];
 
     var retrieveObj = document.cookie;
-    allObjects = retrieveObj.split("-");
+    allObjects = retrieveObj.split("~");
     for(let i=0;i<allObjects.length-1;i++){
         let user = allObjects[i].split(",");
         let obj = {};
@@ -32,9 +32,17 @@ let allUsers = [];
     console.log(currentObj.userName);
 
     document.querySelector("#vaccinateToday").addEventListener("click", e => {
-        currentObj.firstVaccinationDate = "today's date";
-        currentObj.nextVaccinationDate = "secondVDate";
-        alert("you have successfully vaccinated today!");
+        if(currentObj.firstVaccinationDate == "notDoneYet") {
+            var date = new Date();
+            currentObj.firstVaccinationDate = date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear();
+            date.setDate(date.getDate() + 84);
+            currentObj.nextVaccinationDate = date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear();
+        } else {
+            currentObj.secondVaccinationDate = currentObj.nextVaccinationDate;
+            console.log("updating second vacc date");
+        }
+        
+        alert("you have successfully vaccinated");
         updateCookies();
     })
 
@@ -45,6 +53,10 @@ let allUsers = [];
     document.querySelector("#getDetails").addEventListener("click", e => {
         var userDetails = "name:\n" + currentObj.userName + "\n\n" + "age:\n" +  currentObj.age + "\n\n" + "gender:\n" +  currentObj.gender + "\n\n" + "phone:\n" +  currentObj.phone + "\n\n" + "city:\n" +  currentObj.city + "\n\n" + "email:\n" +  currentObj.email + "\n\n" + "1st vaccination:\n" +  currentObj.firstVaccinationDate + "\n\n" + "2nd vaccination:\n" +  currentObj.secondVaccinationDate + "\n\n" + "next Vaccination:\n" +  currentObj.nextVaccinationDate;
         alert(userDetails);
+    })
+
+    document.querySelector("#vaccinationHistory").addEventListener("click", e => {
+        location.href = "index3.html?name=" + currentObj.email;
     })
 
     function getParameterByName(name, url = window.location.href) {
@@ -59,6 +71,6 @@ let allUsers = [];
     function updateCookies() {
         document.cookie = "";
         allUsers.forEach(element => {
-            document.cookie += element.userName + "," + element.age + "," + element.gender + "," + element.phone + "," + element.city + "," + element.email + "," + element.firstVaccinationDate + "," + element.secondVaccinationDate + "," + element.nextVaccinationDate + "-";
+            document.cookie += element.userName + "," + element.age + "," + element.gender + "," + element.phone + "," + element.city + "," + element.email + "," + element.firstVaccinationDate + "," + element.secondVaccinationDate + "," + element.nextVaccinationDate + "~";
         });
     }

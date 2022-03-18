@@ -2,7 +2,7 @@ let allObjects = [];
 let allUsers = [];
 
     var retrieveObj = document.cookie;
-    allObjects = retrieveObj.split("-");
+    allObjects = retrieveObj.split("~");
     for(let i=0;i<allObjects.length-1;i++){
         let user = allObjects[i].split(",");
         let obj = {};
@@ -35,10 +35,22 @@ let allUsers = [];
             td.innerHTML = element.userName;
             tr.appendChild(td);
             td = document.createElement("td");
+            td.innerHTML = element.age;
+            tr.appendChild(td);
+            td = document.createElement("td");
+            td.innerHTML = element.gender;
+            tr.appendChild(td);
+            td = document.createElement("td");
             td.innerHTML = element.email;
             tr.appendChild(td);
             td = document.createElement("td");
             td.innerHTML = element.city;
+            tr.appendChild(td);
+            td = document.createElement("td");
+            td.innerHTML = element.firstVaccinationDate;
+            tr.appendChild(td);
+            td = document.createElement("td");
+            td.innerHTML = element.secondVaccinationDate;
             tr.appendChild(td);
             tbody.appendChild(tr);
           });
@@ -49,16 +61,28 @@ let allUsers = [];
         console.log("inside all vaccinated users");
 
         allUsers.forEach(element => {
-            if(element.nextVaccinationDate == "secondVDate") {
+            if(!(element.nextVaccinationDate == "notDoneYet")) {
                 tr = document.createElement("tr");
                 td = document.createElement("td");
                 td.innerHTML = element.userName;
+                tr.appendChild(td);
+                td = document.createElement("td");
+                td.innerHTML = element.age;
+                tr.appendChild(td);
+                td = document.createElement("td");
+                td.innerHTML = element.gender;
                 tr.appendChild(td);
                 td = document.createElement("td");
                 td.innerHTML = element.email;
                 tr.appendChild(td);
                 td = document.createElement("td");
                 td.innerHTML = element.city;
+                tr.appendChild(td);
+                td = document.createElement("td");
+                td.innerHTML = element.firstVaccinationDate;
+                tr.appendChild(td);
+                td = document.createElement("td");
+                td.innerHTML = element.secondVaccinationDate;
                 tr.appendChild(td);
                 tbody.appendChild(tr);
             }
@@ -70,16 +94,28 @@ let allUsers = [];
         console.log("inside non vaccinated users");
 
         allUsers.forEach(element => {
-            if(element.firstVaccinationDate == "") {
+            if(element.firstVaccinationDate == "notDoneYet") {
                 tr = document.createElement("tr");
                 td = document.createElement("td");
                 td.innerHTML = element.userName;
+                tr.appendChild(td);
+                td = document.createElement("td");
+                td.innerHTML = element.age;
+                tr.appendChild(td);
+                td = document.createElement("td");
+                td.innerHTML = element.gender;
                 tr.appendChild(td);
                 td = document.createElement("td");
                 td.innerHTML = element.email;
                 tr.appendChild(td);
                 td = document.createElement("td");
                 td.innerHTML = element.city;
+                tr.appendChild(td);
+                td = document.createElement("td");
+                td.innerHTML = element.firstVaccinationDate;
+                tr.appendChild(td);
+                td = document.createElement("td");
+                td.innerHTML = element.secondVaccinationDate;
                 tr.appendChild(td);
                 tbody.appendChild(tr);
             }

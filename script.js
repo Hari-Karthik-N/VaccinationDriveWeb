@@ -11,9 +11,9 @@ document.querySelector("#submit").addEventListener("click", e => {
     obj.phone = document.querySelector("#phone").value;
     obj.city = document.querySelector("#city").value;
     obj.email = document.querySelector("#email").value;
-    obj.firstVaccinationDate = "";
-    obj.secondVaccinationDate = "";
-    obj.nextVaccinationDate = "";
-    document.cookie += obj.name + "," + obj.age + "," + obj.gender + "," + obj.phone + "," + obj.city + "," + obj.email + "," + obj.firstVaccinationDate + "," + obj.secondVaccinationDate + "," + obj.nextVaccinationDate + "-";
+    obj.firstVaccinationDate = "notDoneYet";
+    obj.secondVaccinationDate = "notDoneYet";
+    obj.nextVaccinationDate = "notDoneYet";
+    document.cookie += obj.name + "," + obj.age + "," + obj.gender + "," + obj.phone + "," + obj.city + "," + obj.email + "," + obj.firstVaccinationDate + "," + obj.secondVaccinationDate + "," + obj.nextVaccinationDate + "~";
     location.href = "index1.html";
 })

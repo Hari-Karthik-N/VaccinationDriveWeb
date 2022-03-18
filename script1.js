@@ -2,7 +2,7 @@ let allObjects = [];
 let allUsers = [];
 
     var retrieveObj = document.cookie;
-    allObjects = retrieveObj.split("-");
+    allObjects = retrieveObj.split("~");
     for(let i=0;i<allObjects.length-1;i++){
         let user = allObjects[i].split(",");
         let obj = {};
